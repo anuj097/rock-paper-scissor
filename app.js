@@ -54,7 +54,7 @@ const playGame = (userChoice) => {
     compMsg.innerText = `Computer selected ${compChoice}`;
 
     if(userChoice===compChoice) {
-        msg.innerText = "Game Tie!! Please try again";
+        msg.innerText = "Game Tie! Try again";
         msg.style.backgroundColor = "yellow";
     } else {
         let userWin = true;
