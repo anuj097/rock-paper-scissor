@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#heading {
+    height: 5rem;
+    width: 90rem;
+    text-align: center;
+    line-height: 5rem;              /* put the text in middle (should be same as height) */
+    background-color: blueviolet;
+}
+
+.choices {
+    display: flex;              /*to align div horizontal - - - */
+    justify-content: center;   /* to algin item in center */
+    align-items: center;      /* centers item vertically*/
+    gap: 2rem;                /* gap in items of div */
+    margin-top: 1rem;         /* gap from top tag or item */
+}
+
+.choice {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    /* below lines to make background in center, and horizontal*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* while cursor goes to choice(either rock, paper, scissor) */
+.choice:hover {
+    opacity: 0.5; /* to blur */
+    cursor: pointer; /* cursor will become a hand type*/
+    background-color: black; /* to make the background black while hover mouse */
+    
+}
+
+img {
+    height: 180px;
+    width: 180px;
+    object-fit: cover;  /* the images will be fit in div's */
+    border-radius: 50%; /* to shape images in circle instead square */
+}
+
+.selections {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.selection {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+#output {
+    background-color: pink;
+    font-size: 2rem;
+    text-align: center;
+    display: inline; /* instead of bg-color, size in complete horizontal page, make it fit based on text size */
+    padding: 1rem;  /* the padding of text will increase in all direction.*/
+    border-radius: 1rem; /* corner design */
+}
+
+.score-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin-top: 2rem;
+    gap: 5rem;
+}
+
+#user-score , #comp-score {
+    font-size: 3rem;
+}
+
+.result {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+#msg {
+    background-color: yellow;
+    font-size: 2rem;
+    text-align: center;
+    display: inline;
+    padding: 2rem;
+    border-radius: 1rem; /* corner design */
+}
