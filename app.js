@@ -4,7 +4,6 @@ const choices = document.querySelectorAll(".choice");
 const msg = document.querySelector("#msg");
 const userSc = document.querySelector("#user-score");
 const compSc = document.querySelector("#comp-score");
-const selection = document.querySelector("#output");
 
 // to get the random number for computer
 const genCompChoice = () => {
@@ -12,6 +11,16 @@ const genCompChoice = () => {
     const num = Math.floor(Math.random() *3);
     return options[num];
 }
+
+// Helper to clear all borders and computer messages
+const clearSelections = () => {
+    document.querySelectorAll('.choice img').forEach(img => {
+        img.style.border = 'none';
+    });
+    document.querySelectorAll('.comp-selection-msg').forEach(p => {
+        p.innerText = '';
+    });
+};
 
 // for score calculation and message printing(win, lose)
 const showWinner = (userWin) => {
@@ -31,13 +40,20 @@ const showWinner = (userWin) => {
 
 // for game logic
 const playGame = (userChoice) => {
-    console.log("User Choice ", userChoice);
+    clearSelections();
     const compChoice = genCompChoice();
-    console.log("Comp Choice ", compChoice);
-    selection.innerText = `You choose: ${userChoice}  <-=->  Computer choose: ${compChoice}`;
+
+    // Highlight user selection
+    const userImg = document.querySelector(`#${userChoice} img`);
+    userImg.style.border = '5px solid black';
+
+    // Highlight computer selection and show message
+    const compImg = document.querySelector(`#${compChoice} img`);
+    compImg.style.border = '5px solid red';
+    const compMsg = document.querySelector(`#comp-msg-${compChoice}`);
+    compMsg.innerText = `Computer selected ${compChoice}`;
 
     if(userChoice===compChoice) {
-        console.log("Its a Tie");
         msg.innerText = "Game Tie!! Please try again";
         msg.style.backgroundColor = "yellow";
     } else {

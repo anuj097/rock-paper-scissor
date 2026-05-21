@@ -23,9 +23,9 @@
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    /* below lines to make background in center, and horizontal*/
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Stack image and message vertically */
+    justify-content: flex-start;
     align-items: center;
 }
 /* while cursor goes to choice(either rock, paper, scissor) */
@@ -34,6 +34,11 @@
     cursor: pointer; /* cursor will become a hand type*/
     background-color: black; /* to make the background black while hover mouse */
     
+}
+
+.choice img {
+    border: none;
+    transition: border 0.2s;
 }
 
 img {
@@ -87,4 +92,14 @@ img {
     display: inline;
     padding: 2rem;
     border-radius: 1rem; /* corner design */
+}
+
+.comp-selection-msg {
+    text-align: center;
+    color: red;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    min-height: 1.5rem;
+    width: 100%;
+    display: block;
 }
